@@ -1,0 +1,33 @@
+﻿[
+    {
+        "titulo": "Primer desafío: Git y GitHub",
+        "descripcion": "Repositorio desarrollado para practicar commits, ramas, fusiones y resolución de conflictos.",
+        "tecnologias": [
+            "HTML5",
+            "Git",
+            "GitHub"
+        ],
+        "url": "https://github.com/moiseshasbunrozas26-coder/primer-desafio-git"
+    },
+    {
+        "titulo": "Portafolio modular",
+        "descripcion": "Sitio organizado mediante componentes reutilizables, estilos independientes y datos almacenados en JSON.",
+        "tecnologias": [
+            "HTML5",
+            "CSS3",
+            "JavaScript",
+            "JSON"
+        ],
+        "url": "#inicio"
+    },
+    {
+        "titulo": "Sistema de gestión",
+        "descripcion": "Propuesta de solución tecnológica orientada al control de inventario, productos y procesos de negocio.",
+        "tecnologias": [
+            "Python",
+            "SQL",
+            "Análisis de datos"
+        ],
+        "url": "#contacto"
+    }
+]

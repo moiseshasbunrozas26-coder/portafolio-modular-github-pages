@@ -94,4 +94,4 @@ Esto permite realizar cambios en una parte del proyecto con menor riesgo de afec
 
 ## Autor
 
-Alex Hasbún
+[Alex Hasbún](https://github.com/moiseshasbunrozas26-coder) 

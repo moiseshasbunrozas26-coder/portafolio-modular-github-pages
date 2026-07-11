@@ -4,11 +4,11 @@
 
 Este proyecto corresponde al taller formativo de la asignatura Aplicaciones y Tecnologías de la Web.
 
-El sitio presenta un portafolio profesional desarrollado mediante HTML, CSS, JavaScript y JSON. Su propósito es aplicar buenas prácticas de modularidad, organización de archivos y separación de responsabilidades.
+El sitio presenta un portafolio profesional desarrollado con HTML, CSS, JavaScript y JSON. Su propósito es aplicar principios de modularidad, organización de archivos, reutilización de componentes y separación de responsabilidades.
 
 ## Sitio publicado
 
-[Ver portafolio publicado en GitHub Pages](https://moiseshasbunrozas26-coder.github.io/portafolio-modular-github-pages/)
+[Ver sitio publicado en GitHub Pages](https://moiseshasbunrozas26-coder.github.io/portafolio-modular-github-pages/)
 
 ## Arquitectura del proyecto
 
@@ -36,28 +36,34 @@ portafolio-modular-github-pages/
 
 ### Separación de responsabilidades
 
-El archivo `index.html` contiene la estructura principal y los contenedores donde se incorporan los componentes dinámicos.
+El proyecto fue dividido en carpetas y archivos independientes según la función que desempeña cada elemento.
 
-Los estilos se encuentran separados en `css/styles.css`, evitando mezclar reglas CSS dentro del documento HTML.
+- `index.html` contiene la estructura principal del sitio.
+- `css/styles.css` contiene la presentación visual.
+- `js/app.js` coordina la aplicación y carga los datos.
+- `data/proyectos.json` almacena la información de los proyectos.
+- `components/header.js` genera el encabezado.
+- `components/footer.js` genera el pie de página.
 
-La lógica principal se almacena en `js/app.js`, archivo encargado de importar los componentes y cargar los datos de los proyectos.
+Esta separación evita mezclar estructura, estilos, comportamiento y datos dentro de un mismo archivo.
 
-La información de los proyectos se almacena en `data/proyectos.json`, permitiendo modificar el contenido sin intervenir directamente en el HTML.
+### Modularidad por componentes
 
-### Componentes reutilizables
+El encabezado y el pie de página fueron desarrollados como módulos JavaScript independientes.
 
-El encabezado y el pie de página se desarrollaron como módulos independientes:
+Cada componente exporta una función que es importada desde `app.js`. Esto permite reutilizar los componentes y modificarlos sin intervenir directamente en el archivo HTML.
 
-- `components/header.js`
-- `components/footer.js`
+### Uso de JSON
 
-Cada módulo exporta una función que luego es importada desde `app.js`. Esta organización reduce la repetición de código y facilita el mantenimiento.
+Los datos de los proyectos se almacenan en `proyectos.json`. La aplicación utiliza `fetch()` para obtener la información y generar las tarjetas dinámicamente.
 
-### Modularidad y bajo acoplamiento
+Esta decisión permite modificar o agregar proyectos sin cambiar la estructura de `index.html`.
 
-Cada archivo posee una responsabilidad específica. Los componentes visuales no dependen directamente de los datos de los proyectos y el archivo JSON no contiene reglas de presentación.
+### Bajo acoplamiento
 
-Esta separación permite realizar modificaciones en una parte del proyecto sin afectar innecesariamente las demás.
+Cada módulo posee una responsabilidad específica. Los componentes visuales no dependen directamente del archivo JSON y los datos no contienen reglas de presentación.
+
+Esto permite realizar cambios en una parte del proyecto con menor riesgo de afectar las demás.
 
 ## Ventajas
 
@@ -65,15 +71,16 @@ Esta separación permite realizar modificaciones en una parte del proyecto sin a
 - Permite reutilizar componentes.
 - Separa estructura, presentación, comportamiento y datos.
 - Facilita la incorporación de nuevos proyectos.
-- Mejora la lectura y organización del repositorio.
-- Permite publicar el proyecto gratuitamente mediante GitHub Pages.
+- Mejora la organización y lectura del repositorio.
+- Permite publicar gratuitamente mediante GitHub Pages.
 
 ## Limitaciones
 
-- El sitio utiliza contenido estático y no posee una base de datos.
-- Los cambios realizados en el archivo JSON requieren actualizar el repositorio.
+- El sitio utiliza contenido estático.
+- No posee una base de datos.
+- Los cambios en el archivo JSON requieren actualizar el repositorio.
 - Los componentes dependen de JavaScript para mostrarse.
-- La carga de datos mediante `fetch()` necesita ejecutarse desde un servidor local o desde GitHub Pages.
+- La carga mediante `fetch()` requiere un servidor local o GitHub Pages.
 
 ## Tecnologías utilizadas
 
